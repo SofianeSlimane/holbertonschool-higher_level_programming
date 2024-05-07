@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-for i in range(97, 122)
-    print("{]".format(chr(i)), end="")
+i = 97
+while i < 123:
+    print("{}".format(chr(i)), end="")
+    i += 1
