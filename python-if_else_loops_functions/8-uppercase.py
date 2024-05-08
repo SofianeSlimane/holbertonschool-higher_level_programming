@@ -9,4 +9,4 @@ def uppercase(str):
         elif ord(char) > 90:
             unicode = ord(char) - 32
             new_str += chr(unicode)
-    print(new_str)
+    print("{}".format(new_str))
