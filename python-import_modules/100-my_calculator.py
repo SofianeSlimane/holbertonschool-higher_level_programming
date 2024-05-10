@@ -2,11 +2,10 @@
 import sys
 from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    num1 = sys.argv[1]
-    num2 = sys.argv[3]
-    if num1.isdigit() == False or num2.isdigit() == False:
-         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-         exit(1)
+    if len(sys.argv) == 1:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
+    
     num1 = int(sys.argv[1])
     num2 = int(sys.argv[3])
     op = sys.argv[2]
