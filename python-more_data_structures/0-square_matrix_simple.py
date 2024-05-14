@@ -5,5 +5,6 @@ def square_matrix_simple(matrix=[]):
     square = lambda num: num * num
     for i in range(mx_):
         for j in range(mx_):
-            new_matrix[i][j] = square(matrix[i][j])
+            value_squared = square(matrix[i][j])
+            new_matrix[i][j] = value_squared
     return new_matrix 
