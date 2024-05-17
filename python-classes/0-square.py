@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    """Empty class with no attribute stored in dictionary {}.
-    """
+    """This class has no attributes and its empty attribute dictionary proves it {}."""
     pass
