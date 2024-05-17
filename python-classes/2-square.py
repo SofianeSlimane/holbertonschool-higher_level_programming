@@ -4,7 +4,6 @@
 
 class Square:
     """Defines a square and its size.
-
     Attributes:
         size: represents square size.
     """
@@ -13,13 +12,10 @@ class Square:
 
         Args:
             size: Square size with default value of 0.
-
         Raises:
             TypeError: if size is not an integer
-
             ValueError: if size value is negative
         """
-
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
