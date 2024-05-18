@@ -3,11 +3,18 @@
 
 
 class Square:
-    """Defines a square and its size."""
+    """Defines a square and its size.
+    Attributes:
+        size: represents square size.
+    """
     def __init__(self, size=0):
         """Initializes a square using size.
+
         Args:
             size: Square size with default value of 0.
+        Raises:
+            TypeError: if size is not an integer
+            ValueError: if size value is negative
         """
         if type(size) != int:
             raise TypeError("size must be an integer")
@@ -15,3 +22,4 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+
