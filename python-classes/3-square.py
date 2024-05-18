@@ -12,8 +12,12 @@ class Square:
         """Initializes square object.
         Args:
             size: square size
+
+        Raises:
+            TypeError: if size is not an integer
+            ValueError: if size value is negative
         """
-        if type(size) != int:
+        if isinstance(size, int) is False:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
