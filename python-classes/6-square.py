@@ -29,6 +29,7 @@ class Square:
         """
         if self.__size == 0:
             print()
+        else:
 
             for h in range(self.__position[1]):
                 print()
