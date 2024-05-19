@@ -33,7 +33,6 @@ class Square:
                     if not(self.__position[1] > 0):
                         print(" ", end="")
                     else:
-                        print(" ", end="")
                         break
                 for k in range(self.__size):
                     print("#", end="")
