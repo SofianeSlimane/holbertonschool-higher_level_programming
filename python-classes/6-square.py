@@ -30,10 +30,7 @@ class Square:
         else:
             for i in range(self.__size):
                 for j in range(self.__position[0]):
-                    if not(self.__position[1] > 0):
-                        print(" ", end="")
-                    else:
-                        break
+                    print(" ", end="")
                 for k in range(self.__size):
                     print("#", end="")
                 print()
@@ -75,7 +72,7 @@ class Square:
             TypeError: value is not a tuple or an element is a negative integer
 
         """
-        if isinstance(value, tuple) is False or value[0] <= 0 or value[1] <= 0:
+        if value[0] <= 0 or value[1] <= 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
