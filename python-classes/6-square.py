@@ -77,9 +77,10 @@ class Square:
 
         """
 
-        if len(value) != 2 or not(isinstance(value, tuple)):
+        if isinstance(value, tuple) is False or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif not(isinstance(value[0], int)) and not(isinstance(value[1])):
+        elif (isinstance(value[0], int) is False and
+                isinstance(value[1], int) is False):
             raise TypeError("position must be a tuple of 2 positive integers")
         elif value[0] < 0 and value[0] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
