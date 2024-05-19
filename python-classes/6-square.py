@@ -24,10 +24,14 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the Square object with # signs"""
+        """Prints the Square object with # signs
+        using abcissa and ordinate coordinates
+        """
         if self.__size == 0:
             print()
         else:
+            for h in range(self.__position[1]):
+                print()
             for i in range(self.__size):
                 for j in range(self.__position[0]):
                     print(" ", end="")
@@ -72,19 +76,11 @@ class Square:
             TypeError: value is not a tuple or an element is a negative integer
 
         """
-        element_is_int = True
-        element_is_positive = True
-        for elements in value:
-            if not(isinstance(element, int)):
-                element_bool = False
-                break
-        for numbers in value:
-            if numbers <= 0:
-                element_is_positive = False
-                break
 
         if (isinstance(value, tuple) is False or len(value) != 2 or
-                element_is_int is False or element_is_positive is False):
+                value[0] <= 0 or value[1] <= 0 or
+                not(isinstance(value[0], int))
+                or not(isinstance(value[1], int))):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
