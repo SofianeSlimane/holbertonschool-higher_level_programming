@@ -16,30 +16,6 @@ class Square:
         self.__size = size
         self.__position = position
 
-    def area(self):
-        """Computes the area of the square object
-        Returns:
-            int: area value
-        """
-        return self.__size ** 2
-
-    def my_print(self):
-        """Prints the Square object with # signs
-        using abcissa and ordinate coordinates
-        """
-        if self.__size == 0:
-            print()
-        else:
-
-            for h in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
-                for j in range(self.__position[0]):
-                    print(" ", end="")
-                for k in range(self.__size):
-                    print("#", end="")
-                print()
-
     @property
     def size(self):
         """Retrieves private instance attribute size"""
@@ -84,3 +60,27 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
+
+    def area(self):
+        """Computes the area of the square object
+        Returns:
+            int: area value
+        """
+        return self.__size ** 2
+
+    def my_print(self):
+        """Prints the Square object with # signs
+        using abcissa and ordinate coordinates
+        """
+        if self.__size == 0:
+            print()
+        else:
+
+            for h in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                for j in range(self.__position[0]):
+                    print(" ", end="")
+                for k in range(self.__size):
+                    print("#", end="")
+                print()
