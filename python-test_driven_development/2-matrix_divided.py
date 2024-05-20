@@ -21,9 +21,10 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     elif div == 0:
         raise ZeroDivisionError("division by zero")
-    for i in matrix:
-        if len(i) != len(matrix[1]):
-            raise TypeError("Each row of the matrix must have the same size")
+    if len(matrix) > 1:
+        for i in matrix:
+            if len(i) != len(matrix[1]):
+                raise TypeError("Each row of the matrix must have the same size")
 
     len_m = len(matrix)
     numberOfColumns = len(matrix[0])
