@@ -1,22 +1,25 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
->>> print(matrix_divided(matrix, 4))
-[[0.25, 0.50, 0.75], [1.00, 1.25, 1.50]]
+>>> print(matrix_divided(matrix, 4))        
+[[0.25, 0.5, 0.75], [1.0, 1.25, 1.5]]
 
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> print(matrix_divided(matrix, 2.5))
-[[0.40, 0.80, 1.20], [1.60, 2.00, 2.40]]
+[[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
 
 
-
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> print(matrix_divided(matrix, "string"))
 Traceback (most recent call last):
    ...
 TypeError: div must be a number
 
 
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> print(matrix_divided(matrix, 0))
 Traceback (most recent call last):
    ...
-TypeError: division by 0
+ZeroDivisionError: division by zero
 
 
 >>> matrix = [[1, 2, 3], [4, 5, "string"]]
