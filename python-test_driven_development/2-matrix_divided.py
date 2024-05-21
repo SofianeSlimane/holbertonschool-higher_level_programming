@@ -37,7 +37,7 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix "
                         "(list of lists) of integers/floats")
     for lists in matrix:
-        if isinstance(lists, list) is False:
+        if isinstance(lists, list) is False or len(lists) == 0:
             raise TypeError("matrix must be a matrix "
                             "(list of lists) of integers/floats")
 
