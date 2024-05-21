@@ -59,5 +59,7 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 <BLANKLINE>
 .
 
->>> text_indentation(" ")
+>>> text_indentation(" :fezfezfez: ")
+ :
+fezfezfez:
 <BLANKLINE>
