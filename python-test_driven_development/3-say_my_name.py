@@ -4,4 +4,6 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("first_name must be a string")
     elif isinstance(last_name, str) is False:
         raise TypeError("last_name must be a string")
+    elif len(first_name) == 0 or len(last_name) == 0:
+        raise TypeError("first_name must be a string")
     print("My name is {} {}".format(first_name, last_name))
