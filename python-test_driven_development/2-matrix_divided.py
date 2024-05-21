@@ -24,7 +24,11 @@ def matrix_divided(matrix, div):
     elif isinstance(matrix, list) is False:
         raise TypeError("matrix must be a matrix (list of lists) "
                         "of integers/floats")
-    elif len(matrix) > 1:
+    for lists in matrix:
+        if isinstance(lists, list) is False:
+            raise TypeError("matrix must be a matrix "
+                            "(list of lists) of integers/floats")
+    if len(matrix) > 1:
         for i in matrix:
             if len(i) != len(matrix[1]):
                 raise TypeError("Each row of the matrix must "
@@ -33,9 +37,9 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix "
                         "(list of lists) of integers/floats")
     for lists in matrix:
-        if len(lists) == 0:
+        if isinstance(lists, list) is False:
             raise TypeError("matrix must be a matrix "
-                        "(list of lists) of integers/floats")
+                            "(list of lists) of integers/floats")
 
     len_m = len(matrix)
     numberOfColumns = len(matrix[0])
