@@ -18,4 +18,18 @@ TypeError: text must be a string
 test:
 <BLANKLINE>
 
+>>> text_indentation(":")
+:
+<BLANKLINE>
+
+
+>>> text_indentation("?")
+?
+<BLANKLINE>
+
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+>>> text_indentation("")
 
