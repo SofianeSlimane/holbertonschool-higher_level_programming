@@ -24,7 +24,11 @@ def matrix_divided(matrix, div):
     if len(matrix) > 1:
         for i in matrix:
             if len(i) != len(matrix[1]):
-                raise TypeError("Each row of the matrix must have the same size")
+                raise TypeError("Each row of the matrix must "
+                                "have the same size")
+    if len(matrix) == 0:
+        raise TypeError("matrix must be a matrix "
+                        "(list of lists) of integers/floats")
 
     len_m = len(matrix)
     numberOfColumns = len(matrix[0])
@@ -53,6 +57,9 @@ def matrix_divided(matrix, div):
             for k in range(numberOfColumns):
                 value_div = round(matrix[j][k] / div, 2)
                 new_matrix[j][k] = value_div
+    elif isinstance(matrix, list) is False:
+        raise TypeError("matrix must be a matrix "
+                        "(list of lists) of integers/floats")
     else:
         raise TypeError("matrix must be a matrix "
                         "(list of lists) of integers/floats")
