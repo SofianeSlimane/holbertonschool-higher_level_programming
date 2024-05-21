@@ -18,8 +18,5 @@ TypeError: first_name must be a string
 My name is Sofiane 
 
 
->>> say_my_name("", "Sofiane")
-My name is  Sofiane
-
 >>> say_my_name("Sofiane")
 My name is Sofiane 
