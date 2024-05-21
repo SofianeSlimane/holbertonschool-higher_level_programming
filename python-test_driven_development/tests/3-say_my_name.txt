@@ -21,3 +21,18 @@ My name is Sofiane
 Traceback (most recent call last):
    ...
 TypeError: first_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+   ...
+TypeError: first_name must be a string
+
+>>> say_my_name(None, "Slimane")
+Traceback (most recent call last):
+   ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Sofiane", None)
+Traceback (most recent call last):
+   ...
+TypeError: last_name must be a string
