@@ -1,36 +1,18 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("test")
-test
->>> text_indentation("test.")
-test.
+>>> text_indentation("This is a test. Don't pay much attention to it: How is the weather today? ")
+This is a test.
 <BLANKLINE>
->>> text_indentation("test? ")
-test?
+Don't pay much attention to it:
 <BLANKLINE>
->>> text_indentation(5)
-Traceback (most recent call last):
-   ...
-TypeError: text must be a string
-
-
->>> text_indentation("test: ")
-test:
+How is the weather today?
 <BLANKLINE>
-
 >>> text_indentation(":")
 :
-<BLANKLINE>
-
-
 >>> text_indentation("?")
 ?
-<BLANKLINE>
-
 >>> text_indentation(".")
 .
-<BLANKLINE>
-
 >>> text_indentation("")
 
 
@@ -38,3 +20,8 @@ test:
 Traceback (most recent call last):
    ...
 TypeError: text must be a string
+
+>>> text_indentation("?:.")
+?
+:
+.
