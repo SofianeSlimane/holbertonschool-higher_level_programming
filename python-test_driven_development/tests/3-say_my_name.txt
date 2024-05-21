@@ -42,7 +42,13 @@ Traceback (most recent call last):
    ...
 TypeError: first_name must be a string
 
+>>> say_my_name(1)
+Traceback (most recent call last):
+   ...
+TypeError: first_name must be a string
+
 >>> say_my_name(["Sofiane"], "Slimane")
 Traceback (most recent call last):
    ...
 TypeError: first_name must be a string
+
