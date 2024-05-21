@@ -25,3 +25,23 @@ TypeError: text must be a string
 ?
 :
 .
+
+>>> text_indentation(25)
+Traceback (most recent call last):
+   ...
+TypeError: text must be a string
+
+>>> text_indentation("string without punctuation")
+string without punctuation
+
+>>> text_indentation(" ?TEST")
+ ?
+TEST
+
+>>> text_indentation("TEST :")
+TEST :
+
+>>> text_indentation("TE . ST")
+TE .
+<BLANKLINE>
+ST
