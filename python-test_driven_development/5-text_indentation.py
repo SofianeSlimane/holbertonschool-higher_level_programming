@@ -10,14 +10,14 @@ def text_indentation(text):
         string: string
     """
     if isinstance(text, str):
-        for i in range(len(text)):
-            if text[i] == "." or text[i] == "?" or text[i] == ":":
-                print(text[i], end="")
+        s1 = text.replace(". ", ".\n")
+        s1 = s1.replace("? ", "?\n")
+        s1 = s1.replace(": ", ":\n")
+        for i in range(len(s1)):
+            if s1[i] == "." or s1[i] == "?" or s1[i] == ":":
+                print(s1[i], end="")
                 print()
-                print()
-            elif text[i] == " ":
-                i += 1
             else:
-                print(text[i], end="")
+                print(s1[i], end="")
     else:
         raise TypeError("text must be a string")
