@@ -58,3 +58,6 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 ?
 <BLANKLINE>
 .
+
+>>> text_indentation(" ")
+<BLANKLINE>
