@@ -32,3 +32,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_bool(self):
         """Test boolean"""
         self.assertEqual(max_integer([True, False]), True)
+    
+    def test_one_value(self):
+        self.assertEqual(max_integer([50]), 50)
+
+
