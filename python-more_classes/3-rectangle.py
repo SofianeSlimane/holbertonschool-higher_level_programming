@@ -13,7 +13,11 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+
     def __str__(self):
+        """Method that prints the visual representation of a
+        Rectangle object.
+        """
         message = ""
         if self.__width == 0 or self.__height == 0:
             return message
@@ -21,10 +25,16 @@ class Rectangle:
             for i in range(self.__height):
                 for j in range(self.__width):
                     message += "#"
-                message += "\n"
+                if i != self.__height - 1:
+                    message += "\n"
         return message
+
     def __repr__(self):
-        return "#"
+        """Method that prints an informal string
+        representation of the Rectangle object,
+        in this case, the adress.
+        """
+        return f'3-rectangle.Rectangle object at {hex(id(self))}>'
 
     def area(self):
         """Computes the area of the Rectangle object"""
