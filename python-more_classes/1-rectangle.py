@@ -4,14 +4,15 @@
 
 class Rectangle:
     """Rectangle class"""
+
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle object
         Args:
             width: width
             height: height
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -20,7 +21,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Changes size attribute value if necessary
+        """Changes width attribute value if necessary
         Args:
             value: Rectangle width
 
