@@ -34,7 +34,7 @@ class Rectangle:
         representation of the Rectangle object,
         in this case, the adress.
         """
-        return f'3-rectangle.Rectangle object at {hex(id(self))}>'
+        return f'<3-rectangle.Rectangle object at {hex(id(self))}>'
 
     def area(self):
         """Computes the area of the Rectangle object"""
