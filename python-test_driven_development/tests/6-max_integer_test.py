@@ -32,8 +32,19 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_bool(self):
         """Test boolean"""
         self.assertEqual(max_integer([True, False]), True)
-    
-    def test_one_value(self):
+
+    def test_one_int(self):
+        """Test list of one integer only"""
         self.assertEqual(max_integer([50]), 50)
 
+    def test_one_str(self):
+        """Test list of one string only"""
+        self.assertEqual(max_integer(["string"]), "string")
 
+    def test_one_bool(self):
+        """Test list of one boolean only"""
+        self.assertEqual(max_integer([True]), True)
+
+    def test_matrix(self):
+        """Test list of lists"""
+        self.assertEqual(max_integer([[1, 2, 3], [4, 5, 6]]), [4, 5, 6])
