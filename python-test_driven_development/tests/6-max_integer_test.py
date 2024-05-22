@@ -48,3 +48,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_matrix(self):
         """Test list of lists"""
         self.assertEqual(max_integer([[1, 2, 3], [4, 5, 6]]), [4, 5, 6])
+
+    def test_empty_string(self):
+        """Test list of one empty string"""
+        self.assertEqual(max_integer(""), None)
