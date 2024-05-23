@@ -33,3 +33,30 @@ Traceback (most recent call last):
    ...
 TypeError: '<' not supported between instances of 'dict' and 'dict'
 
+>>> my_list_5 = MyList()
+>>> my_list_5.append(-10)
+>>> my_list_5.append(-500)
+>>> my_list_5.append(-2)
+>>> my_list_5.append(-5)
+>>> my_list_5.append(-80)
+>>> my_list_5.print_sorted()
+[-500, -80, -10, -5, -2]
+
+
+>>> my_list_6 = MyList()
+>>> my_list_6.append((3, 4))
+>>> my_list_6.append((10, 84))
+>>> my_list_6.append((2, 5))
+>>> my_list_6.append((7, 9))
+>>> my_list_6.print_sorted()
+[(2, 5), (3, 4), (7, 9), (10, 84)]
+
+
+>>> my_list_7 = MyList()
+>>> my_list_7.append({35, 40})
+>>> my_list_7.append({20, 64})
+>>> my_list_7.append({12, 59})
+>>> my_list_7.append({56, 99})
+>>> my_list_7.print_sorted()
+[{40, 35}, {64, 20}, {59, 12}, {56, 99}]
+
