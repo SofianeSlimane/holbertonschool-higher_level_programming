@@ -60,3 +60,9 @@ TypeError: '<' not supported between instances of 'dict' and 'dict'
 >>> my_list_7.print_sorted()
 [{40, 35}, {64, 20}, {59, 12}, {56, 99}]
 
+
+
+>>> my_list_8 = MyList()
+>>> my_list_8.append(None)
+>>> my_list_8.print_sorted()
+[None]
