@@ -74,3 +74,13 @@ TypeError: '<' not supported between instances of 'dict' and 'dict'
 Traceback (most recent call last):
    ...
 TypeError: list.append() takes exactly one argument (0 given)
+
+
+
+
+
+>>> my_list_10 = MyList()
+>>> my_list_10.append(True)
+>>> my_list_10.append(False)
+>>> my_list_10.print_sorted()
+[False, True]
