@@ -99,3 +99,37 @@ TypeError: list.append() takes exactly one argument (0 given)
 >>> my_list_11.append(-1)
 >>> my_list_11.print_sorted()
 [-200, -10, -1, 39, 47]
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> my_list_12 = MyList()
+>>> my_list_12.append(int('20'))
+>>> my_list_12.append(int('47'))
+>>> my_list_12.append(int('200'))
+>>> my_list_12.print_sorted()
+[20, 47, 200]
+
+
+
+
+
+
+
+
+
+
+>>> my_list_13 = MyList()
+>>> my_list_13.append(50, 25)
+Traceback (most recent call last):
+   ...
+TypeError: list.append() takes exactly one argument (2 given)
