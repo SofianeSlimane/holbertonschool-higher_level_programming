@@ -22,7 +22,7 @@ class BaseGeometry:
         """
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
-        elif value < 0:
+        elif value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
 
@@ -37,7 +37,7 @@ class Rectangle(BaseGeometry):
             width: width
             height: height
         """
-        if BaseGeometry.integer_validator(self, "height", height):
-            self.__height = height
-        if BaseGeometry.integer_validator(self, "width", width):
-            self.__width = width
+        BaseGeometry.integer_validator(self, "width", width)
+        BaseGeometry.integer_validator(self, "height", height)
+        self.__width = width
+        self.__height = height
