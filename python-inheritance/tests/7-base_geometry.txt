@@ -1,0 +1,188 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> bg1 = BaseGeometry()
+>>> bg1.integer_validator("name", "John")
+Traceback (most recent call last):
+   ...
+TypeError: name must be an integer
+
+
+
+
+
+
+
+
+
+>>> bg2 = BaseGeometry()
+>>> bg2.integer_validator("age", 0)
+Traceback (most recent call last):
+   ...
+ValueError: age must be greater than 0
+
+
+
+
+
+
+>>> bg3 = BaseGeometry()
+>>> bg3.integer_validator("distance", -4)
+Traceback (most recent call last):
+   ...
+ValueError: distance must be greater than 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> bg4 = BaseGeometry()
+>>> bg4.integer_validator("temperature", [1, 2, 3])
+Traceback (most recent call last):
+   ...
+TypeError: temperature must be an integer
+
+
+
+
+
+
+>>> bg5 = BaseGeometry()
+>>> bg5.integer_validator("meteo", 3.10)
+Traceback (most recent call last):
+   ...
+TypeError: meteo must be an integer
+
+
+
+
+
+
+
+
+
+>>> bg6 = BaseGeometry()
+>>> bg6.integer_validator("poids", {1, 2})
+Traceback (most recent call last):
+   ...
+TypeError: poids must be an integer
+
+
+
+
+
+
+
+
+
+
+>>> bg7 = BaseGeometry()
+>>> bg7.integer_validator("taille", (1, 2))
+Traceback (most recent call last):
+   ...
+TypeError: taille must be an integer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> bg8 = BaseGeometry()
+>>> bg8.integer_validator("height", {1: 'test', 2: 'test2'})
+Traceback (most recent call last):
+   ...
+TypeError: height must be an integer
+
+
+
+
+
+
+
+
+
+
+
+
+>>> bg9 = BaseGeometry()
+>>> bg9.integer_validator("height", int('25'))
+
+>>> bg10 = BaseGeometry()
+>>> bg10.integer_validator("smile", None)
+Traceback (most recent call last):
+   ...
+TypeError: smile must be an integer
+
+>>> bg11 = BaseGeometry()
+>>> bg11.integer_validator("smile",)
+Traceback (most recent call last):
+   ...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+
+
+
+>>> bg12 = BaseGeometry()
+>>> bg12.integer_validator("smile", True)
+
+>>> bg13 = BaseGeometry()
+>>> bg13.integer_validator("smile", 3)
+
+
+
+>>> bg14 = BaseGeometry()
+>>> bg14.integer_validator("smile", [[1, 2, 3], [3, 4, 5]])
+Traceback (most recent call last):
+   ...
+TypeError: smile must be an integer
+
+>>> bg15 = BaseGeometry()
+>>> bg15.integer_validator("smile", 2947928498232432)
+
+
+
+
+
