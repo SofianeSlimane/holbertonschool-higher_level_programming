@@ -4,10 +4,11 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
+    """ Square, a subclass of Rectangle.
+    """
     def __init__(self, size):
-        """ Square, a subclass of Rectangle which
-        inherits from its attributes and also
-        integer_validator.
+        """ Constructor method that
+        initializes Square object attributes
         Args:
             size: square size
         """
