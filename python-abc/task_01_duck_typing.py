@@ -63,13 +63,13 @@ class Rectangle(Shape):
         return (self.width + self.height) * 2
 
 
-def shape_info(form):
+def shape_info(Shape):
     """ Gives information about a shape object
     Args:
         form: shape object
     """
-    print(f'Area: {form.area()}')
-    print(f'Perimeter: {form.perimeter()}')
+    print(f'Area: {Shape.area()}')
+    print(f'Perimeter: {Shape.perimeter()}')
 
 
 circle = Circle(radius=5)
