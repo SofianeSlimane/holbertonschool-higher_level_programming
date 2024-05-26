@@ -13,8 +13,8 @@ class Square:
         Args:
             size: square size with default value of zero
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
         if isinstance(self.__size, int) is False:
             raise TypeError("size must be an integer")
         elif self.__size < 0:
