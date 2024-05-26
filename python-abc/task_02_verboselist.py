@@ -13,7 +13,7 @@ class VerboseList(list):
 
     def extend(self, item):
         """ Customed extend method """
-        x  = len(item)
+        x = len(item)
         super().extend(item)
         print(f'Extended the list with [{x}] items.')
 
@@ -24,5 +24,6 @@ class VerboseList(list):
 
     def pop(self, index=-1):
         """ Customed pop method """
-        print(f'Popped [{self[index]}] from the list.')
+        item = self[index]
+        print(f'Popped [{item}] from the list.')
         super().pop(index)
