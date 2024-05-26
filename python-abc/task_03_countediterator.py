@@ -7,14 +7,14 @@ class CountedIterator:
     class that extends the built-in iterator obtained from
     the iter function.
     """
-    def __init__(self, some_iterable):
+    def __init__(self, some_iterable, counter=0):
         """ Initializes object.
         Args:
             some_iterable: iterable to iterate over
             counter: number of items that we iterated over
         """
         self.iterator = iter(some_iterable)
-        self.counter = 0
+        self.counter = counter
 
     def get_count(self):
         """ Returns the current value of the counter """
@@ -23,4 +23,8 @@ class CountedIterator:
     def __next__(self):
         """ Returns the next item in the iterable """
         self.counter += 1
-        return next(self.iterator)
+        try:
+            item = next(self.iterator)
+            return item
+        except StopIteration:
+            raise StopIteration
