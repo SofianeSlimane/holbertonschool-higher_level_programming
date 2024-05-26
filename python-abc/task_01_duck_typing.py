@@ -39,7 +39,7 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
-    """ Circle subclasse of Shape """
+    """ Rectangle subclass of Shape """
     def __init__(self, width=0, height=0):
         """ Implements Rectangle's constructor
         Args:
@@ -70,10 +70,3 @@ def shape_info(Shape):
     """
     print(f'Area: {Shape.area()}')
     print(f'Perimeter: {Shape.perimeter()}')
-
-
-circle = Circle(radius=2)
-rectangle = Rectangle(width=8, height=9)
-
-shape_info(circle)
-shape_info(rectangle)
