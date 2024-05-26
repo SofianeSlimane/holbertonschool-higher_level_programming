@@ -19,8 +19,11 @@ class VerboseList(list):
 
     def remove(self, item):
         """ Customed remove method """
-        print(f'Removed [{item}] from the list.')
-        super().remove(item)
+        try:
+            print(f'Removed [{item}] from the list.')
+            super().remove(item)
+        except ValueError:
+            raise ValueError
 
     def pop(self, index=-1):
         """ Customed pop method """
