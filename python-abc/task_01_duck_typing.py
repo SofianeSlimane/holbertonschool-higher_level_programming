@@ -3,6 +3,7 @@
 and two subclasses of it: Circle and Rectangle.
 """
 from abc import ABC, abstractmethod
+from math import pi
 
 
 class Shape(ABC):
@@ -10,12 +11,12 @@ class Shape(ABC):
     @abstractmethod
     def area(self):
         """ Intiates an area method for its subclasses. """
-        pass
+        ...
 
     @abstractmethod
     def perimeter(self):
         """ Intiates a perimeter method for its subclasses. """
-        pass
+        ...
 
 
 class Circle(Shape):
@@ -28,13 +29,13 @@ class Circle(Shape):
         """ Implements Circle's area method
         Returns: circle's area
         """
-        return 3.141592653589793 * (self.radius ** 2)
+        return pi * (self.radius ** 2)
 
     def perimeter(self):
         """ Implements Circle's perimeter method
         Returns: circle's perimeter
         """
-        return 2 * 3.141592653589793 * self.radius
+        return 2 * pi * self.radius
 
 
 class Rectangle(Shape):
@@ -62,16 +63,16 @@ class Rectangle(Shape):
         return (self.width + self.height) * 2
 
 
-def shape_info(Shape):
+def shape_info(form):
     """ Gives information about a shape object
     Args:
         form: shape object
     """
-    print(f'Area: {Shape.area()}')
-    print(f'Perimeter: {Shape.perimeter()}')
+    print(f'Area: {form.area()}')
+    print(f'Perimeter: {form.perimeter()}')
 
 
-circle = Circle(3)
-rectangle = Rectangle(4, 6)
-shape_info(circle)
-shape_info(rectangle)
+my_circle = Circle(3)
+my_rectangle = Rectangle(4, 6)
+shape_info(my_circle)
+shape_info(my_rectangle)
