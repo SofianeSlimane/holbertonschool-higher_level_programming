@@ -28,11 +28,3 @@ class VerboseList(list):
         """ Customed pop method """
         print(f'Popped [{self[index]}] from the list.')
         super().pop(index)
-
-
-my_list = VerboseList([4, 6, 9])
-my_list.append(2)
-my_list.extend([4, 3, 9])
-my_list.remove(3)
-my_list.pop()
-my_list.pop(4)
