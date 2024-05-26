@@ -22,9 +22,9 @@ class CountedIterator:
 
     def __next__(self):
         """ Returns the next item in the iterable """
-        self.counter += 1
         try:
             item = next(self.iterator)
+            self.counter += 1
             return item
         except StopIteration:
             raise StopIteration
