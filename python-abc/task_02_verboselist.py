@@ -8,14 +8,20 @@ class VerboseList(list):
     """ VerboseList class """
     def append(self, item):
         """ Customed append method """
-        super().append(item)
-        print(f'Added [{item}] to the list.')
+        try:
+            super().append(item)
+            print(f'Added [{item}] to the list.')
+        except TypeError:
+            raise TypeError
 
     def extend(self, item):
         """ Customed extend method """
-        x = len(item)
-        super().extend(item)
-        print(f'Extended the list with [{x}] items.')
+        try:
+            x = len(item)
+            super().extend(item)
+            print(f'Extended the list with [{x}] items.')
+        except TypeError:
+            raise TypeError
 
     def remove(self, item):
         """ Customed remove method """
@@ -27,6 +33,9 @@ class VerboseList(list):
 
     def pop(self, index=-1):
         """ Customed pop method """
-        item = self[index]
-        print(f'Popped [{item}] from the list.')
-        super().pop(index)
+        try:
+            item = self[index]
+            print(f'Popped [{item}] from the list.')
+            super().pop(index)
+        except IndexError:
+            raise IndexError
