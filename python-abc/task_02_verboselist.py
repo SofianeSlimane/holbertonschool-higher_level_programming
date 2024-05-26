@@ -13,10 +13,8 @@ class VerboseList(list):
 
     def extend(self, item):
         """ Customed extend method """
-        len_list_before = len(self)
+        x  = len(item)
         super().extend(item)
-        len_list_after = len(self)
-        x = len_list_after - len_list_before
         print(f'Extended the list with [{x}] items.')
 
     def remove(self, item):
