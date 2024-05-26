@@ -21,7 +21,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     """ Circle subclasse of Shape """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ Implements Circle's constructor """
         self.radius = radius
 
@@ -40,7 +40,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """ Circle subclasse of Shape """
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """ Implements Rectangle's constructor
         Args:
             width: rectangle's width
@@ -72,8 +72,8 @@ def shape_info(Shape):
     print(f'Perimeter: {Shape.perimeter()}')
 
 
-circle = Circle(radius=5)
-rectangle = Rectangle(width=4, height=7)
+circle = Circle(radius=2)
+rectangle = Rectangle(width=8, height=9)
 
 shape_info(circle)
 shape_info(rectangle)
