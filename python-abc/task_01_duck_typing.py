@@ -3,7 +3,6 @@
 and two subclasses of it: Circle and Rectangle.
 """
 from abc import ABC, abstractmethod
-from math import pi
 
 
 class Shape(ABC):
@@ -21,7 +20,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     """ Circle subclasse of Shape """
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """ Implements Circle's constructor """
         self.radius = radius
 
@@ -29,18 +28,18 @@ class Circle(Shape):
         """ Implements Circle's area method
         Returns: circle's area
         """
-        return pi * (self.radius ** 2)
+        return 3.141592653589793 * (self.radius ** 2)
 
     def perimeter(self):
         """ Implements Circle's perimeter method
         Returns: circle's perimeter
         """
-        return 2 * pi * self.radius
+        return 2 * 3.141592653589793 * self.radius
 
 
 class Rectangle(Shape):
     """ Rectangle subclass of Shape """
-    def __init__(self, width=0, height=0):
+    def __init__(self, width, height):
         """ Implements Rectangle's constructor
         Args:
             width: rectangle's width
@@ -70,3 +69,9 @@ def shape_info(Shape):
     """
     print(f'Area: {Shape.area()}')
     print(f'Perimeter: {Shape.perimeter()}')
+
+
+circle = Circle(3)
+rectangle = Rectangle(4, 6)
+shape_info(circle)
+shape_info(rectangle)
