@@ -10,11 +10,13 @@ class SwimMixin:
         """ swim method """
         print("The creature swims!")
 
+
 class FlyMixin:
     """ FlyMixin mixin """
     def fly(self):
         """ fly method """
         print("The creature flies!")
+
 
 class Dragon(SwimMixin, FlyMixin):
     """ Dragon subclass that inherits from two
@@ -23,6 +25,8 @@ class Dragon(SwimMixin, FlyMixin):
     def roar(self):
         """ roar method unique to Dragon """
         print("The dragon roars!")
+
+
 draco = Dragon()
 draco.swim()
 draco.fly()
