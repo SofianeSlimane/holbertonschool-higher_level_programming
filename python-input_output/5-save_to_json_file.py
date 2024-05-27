@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This module contains the function save_to_json_string """
+""" This module contains the function save_to_json_file """
 import json
 
 
