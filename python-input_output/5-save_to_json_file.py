@@ -10,6 +10,5 @@ def save_to_json_file(my_obj, filename):
         my_obj: object to be saved in file
         filename: file to save object into
     """
-
     with open(filename, 'w') as myFile:
         json.dump(my_obj, myFile)
