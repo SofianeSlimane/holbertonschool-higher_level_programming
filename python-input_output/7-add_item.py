@@ -3,7 +3,8 @@
 to a list and save them them to a file. The list is then
 retrieved as a Python Object.
 """
-import sys, json
+import sys
+import json
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
