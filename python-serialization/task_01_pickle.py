@@ -55,3 +55,11 @@ class CustomObject:
             return None
         except pickle.UnpicklingError:
             return None
+        except AttributeError:
+            return None
+        except EOFError:
+            return None
+        except ImportError:
+            return None
+        except IndexError:
+            return None
