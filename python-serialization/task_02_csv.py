@@ -18,6 +18,7 @@ def convert_csv_to_json(csv_file):
                 my_list.append(rows)
         with open("data.json", "w", encoding="utf-8") as myFile:
             json.dump(my_list, myFile, indent=1)
+        return True
     except FileNotFoundError:
         return False
     except AttributeError:
