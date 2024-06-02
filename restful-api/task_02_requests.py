@@ -58,11 +58,11 @@ def fetch_and_save_posts():
 
     if my_response.status_code == 200:
         # print("My headers:", my_response.headers)
-        my_list = eval(my_response.text)
+        my_json = my_response.json()
+        my_list = [{"id": dictionary["id"], "title": dictionary["title"],
+                    "body": dictionary["body"]}for dictionary in my_json]
+        # print(type(my_list[0]))
         # print(type(my_list))
-        # print(my_list[0])
-        for dictionary in my_list:
-            del dictionary['userId']
         # print(my_list)
         fieldnames = ["id", "title", "body"]
 
