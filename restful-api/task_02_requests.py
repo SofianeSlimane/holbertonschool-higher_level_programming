@@ -60,10 +60,10 @@ def fetch_and_save_posts():
         my_list = eval(my_response.text)
         # print(type(my_list))
         # print(my_list[0])
-        # for dictionary in my_list:
-        #    del dictionary['userId']
+        for dictionary in my_list:
+            del dictionary['userId']
         # print(my_list)
-        fieldnames = ["userId", "id", "title", "body"]
+        fieldnames = ["id", "title", "body"]
 
         with open("posts.csv", 'w') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
