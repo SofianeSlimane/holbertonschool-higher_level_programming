@@ -6,9 +6,6 @@ import requests
 import csv
 
 
-# Random print statements can be found in this code.
-# These were used for testing purposes, don't mind
-# them.
 def fetch_and_print_posts():
     """Sends a request to retrieve
     data from a website.
@@ -34,9 +31,6 @@ def fetch_and_print_posts():
                 if key == "title":
                     print(values)
 
-        # print("My json obj", json_obj)
-    # print("My Response headers:", my_obj.headers)
-
 
 def fetch_and_save_posts():
     """Also sends a request to retrieve data
@@ -57,18 +51,12 @@ def fetch_and_save_posts():
     my_response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
     if my_response.status_code == 200:
-        # print("My headers:", my_response.headers)
-        my_json = my_response.json()
-        my_list = [{"id": dictionary["id"], "title": dictionary["title"],
-                    "body": dictionary["body"]}for dictionary in my_json]
-        # print(type(my_list[0]))
-        # print(type(my_list))
-        # print(my_list)
+        my_list = eval(my_response.text)
+        for dictionary in my_list:
+            del dictionary['userId']
         fieldnames = ["id", "title", "body"]
 
         with open("posts.csv", 'w', newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(my_list)
-
-        # print(list(my_response.text))
