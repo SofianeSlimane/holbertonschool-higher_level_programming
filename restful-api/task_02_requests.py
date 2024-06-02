@@ -4,6 +4,7 @@ and fetch_and_save_posts functions.
 """
 import requests
 import csv
+import json
 
 
 # Random print statements can be found in this code.
@@ -57,7 +58,8 @@ def fetch_and_save_posts():
     my_response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
     if my_response.status_code == 200:
-        my_list = eval(my_response.text)
+        # print("My headers:", my_response.headers)
+        my_list = json.loads(my_response.text)
         # print(type(my_list))
         # print(my_list[0])
         for dictionary in my_list:
