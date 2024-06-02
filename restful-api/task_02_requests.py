@@ -58,7 +58,7 @@ def fetch_and_save_posts():
 
     if my_response.status_code == 200:
         # print("My headers:", my_response.headers)
-        my_list = my_response.json()
+        my_list = eval(my_response.text)
         # print(type(my_list))
         # print(my_list[0])
         for dictionary in my_list:
@@ -66,7 +66,7 @@ def fetch_and_save_posts():
         # print(my_list)
         fieldnames = ["id", "title", "body"]
 
-        with open("posts.csv", 'w') as csvfile:
+        with open("posts.csv", 'w', newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(my_list)
