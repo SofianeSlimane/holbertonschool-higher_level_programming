@@ -29,10 +29,10 @@ def fetch_and_print_posts():
     print("Status code:", response_obj.status_code)
     if response_obj.status_code == 200:
         json_obj = response_obj.json()
-    for dictionary in json_obj:
-        for key, values in dictionary.items():
-            if key == "title":
-                print(values)
+        for dictionary in json_obj:
+            for key, values in dictionary.items():
+                if key == "title":
+                    print(values)
 
         # print("My json obj", json_obj)
     # print("My Response headers:", my_obj.headers)
