@@ -1,3 +1,3 @@
 FROM alpine:3.14
 RUN apk add --no-cache curl
-COPY config.txt /devops_essentials
+COPY config.txt /app/config.txt
