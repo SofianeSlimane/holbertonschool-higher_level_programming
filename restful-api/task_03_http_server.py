@@ -25,13 +25,13 @@ class MyHandler(BaseHTTPRequestHandler):
             self.wfile.write(bytes(json_data, "utf-8"))
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(bytes("OK", "utf-8"))
 
         elif self.path == "/":
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(bytes("Hello, this is a simple API!", "utf-8"))
 
@@ -43,7 +43,7 @@ class MyHandler(BaseHTTPRequestHandler):
 
         else:
             self.send_response(404)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(bytes("Endpoint not found", "utf-8"))
 
