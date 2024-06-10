@@ -11,7 +11,6 @@ data_set = {"name": "John", "age": 30,
 info_set = {"version": "1.0", "description":
             "A simple API built with http.server"}
 json_data = json.dumps(data_set)
-json_data_2 = json.dumps(info_set)
 
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -39,7 +38,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(bytes(json_data_2, "utf-8"))
+            self.wfile.write(bytes(info_set, "utf-8"))
 
         else:
             self.send_response(404)
