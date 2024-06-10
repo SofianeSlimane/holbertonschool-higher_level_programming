@@ -48,7 +48,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.wfile.write(bytes("Endpoint not found", "utf-8"))
 
 
-PORT = 8001
+PORT = 8000
 
 
 with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
