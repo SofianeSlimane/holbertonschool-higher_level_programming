@@ -36,7 +36,7 @@ class MyHandler(BaseHTTPRequestHandler):
 
         elif self.path == "/info":
             self.send_response(200)
-            self.send_header('Content-type', 'application/json')
+            self.send_header('Content-type', 'text/html')
             self.end_headers()
             self.wfile.write(bytes(info_set, "utf-8"))
 
