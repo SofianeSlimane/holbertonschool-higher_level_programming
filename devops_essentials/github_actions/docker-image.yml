@@ -1,0 +1,15 @@
+name: build-and-push-docker-image
+on: push
+jobs:
+    build-docker-image:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: docker build -t my-image .
+            - run: docker tag my-image ghcr.io/sofianeslimane/my-image
+            - uses: docker/login-action@v3
+              with:
+                registry: ghcr.io
+                username: ${{ github.actor }}
+                password: ${{ secrets.CR_PAT }}
+            - run: docker push ghcr.io/sofianeslimane/my-image
