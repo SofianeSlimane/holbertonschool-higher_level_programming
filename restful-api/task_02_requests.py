@@ -63,4 +63,4 @@ def fetch_and_save_posts():
         with open("posts.csv", 'w', newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(my_json)
+            writer.writerows(my_list)
