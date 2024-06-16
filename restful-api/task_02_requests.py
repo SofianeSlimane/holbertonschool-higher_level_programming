@@ -51,8 +51,13 @@ def fetch_and_save_posts():
     my_response = requests.get("https://jsonplaceholder.typicode.com/posts")
     my_json = my_response.json()
     if my_response.status_code == 200:
+        my_list = []
         for dictionary in my_json:
-            del dictionary['userId']
+            my_dict = {'id': dictionary.get('id'),
+                       'title': dictionary.get('title'),
+                       'body': dictionary.get('body')}
+            my_list.append(my_dict)
+
         fieldnames = ["id", "title", "body"]
 
         with open("posts.csv", 'w', newline="") as csvfile:
