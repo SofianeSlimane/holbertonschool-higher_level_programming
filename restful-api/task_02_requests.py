@@ -27,9 +27,7 @@ def fetch_and_print_posts():
     if response_obj.status_code == 200:
         json_obj = response_obj.json()
         for dictionary in json_obj:
-            for key, values in dictionary.items():
-                if key == "title":
-                    print(values)
+            print(dictionary['title'])
 
 
 def fetch_and_save_posts():
