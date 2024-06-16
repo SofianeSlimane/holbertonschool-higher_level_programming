@@ -42,7 +42,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.wfile.write(bytes(json_data_2, "utf-8"))
 
         else:
-            self.send_response(404)
+            self.send_error(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(bytes("Endpoint not found", "utf-8"))
