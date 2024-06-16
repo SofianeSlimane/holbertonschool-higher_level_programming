@@ -3,7 +3,7 @@
 from flask import Flask, jsonify, request
 app = Flask(__name__)
 
-username_list = []
+
 users = {}
 
 
@@ -16,7 +16,7 @@ def home():
 @app.route("/data")
 def data():
     """Called when accessing /data URL"""
-    return jsonify(username_list)
+    return jsonify(list(users))
 
 
 @app.route("/status")
@@ -33,11 +33,7 @@ def get_user(username):
         <username> and use it as a parameter.
     """
     users_data = users.get(username)
-    if users_data is None:
-        return {"error": "User not found"}
-    else:
-
-        return users_data
+    return jsonify(users_data)
 
 
 @app.route("/add_user", methods=['POST'])
@@ -45,11 +41,15 @@ def add_user():
     """Called when accessing /add_user. Only
     accepts POST requests.
     """
-    data = request.get_json()
-    users.update({1: "test"})
+    my_json_dict = request.get_json()
+    username = my_json_dict.get("username")
+    # print(data)
+    # print(type(data))
+    users[username] = my_json_dict
+    # print(users)
 
     message = {"message": "User added",
-               "user": data}
+               "user": my_json_dict}
 
     return message
 
