@@ -45,7 +45,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_error(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(bytes("Endpoint not found", "utf-8"))
+            self.wfile.write(bytes("404 not found", "utf-8"))
 
 
 PORT = 8000
