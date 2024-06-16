@@ -49,14 +49,13 @@ def fetch_and_save_posts():
         in our list and write them as rows'
     """
     my_response = requests.get("https://jsonplaceholder.typicode.com/posts")
-
+    my_json = my_response.json()
     if my_response.status_code == 200:
-        my_list = eval(my_response.text)
-        for dictionary in my_list:
+        for dictionary in my_json:
             del dictionary['userId']
         fieldnames = ["id", "title", "body"]
 
         with open("posts.csv", 'w', newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(my_list)
+            writer.writerows(my_json)
