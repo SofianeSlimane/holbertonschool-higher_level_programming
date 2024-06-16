@@ -16,7 +16,7 @@ def home():
 @app.route("/data")
 def data():
     """Called when accessing /data URL"""
-    return jsonify(list(users))
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
