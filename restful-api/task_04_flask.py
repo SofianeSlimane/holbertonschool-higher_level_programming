@@ -51,7 +51,7 @@ def add_user():
     message = {"message": "User added",
                "user": my_json_dict}
 
-    return message
+    return jsonify(message)
 
 
 if __name__ == "__main__":
