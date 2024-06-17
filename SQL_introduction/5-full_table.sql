@@ -1,2 +1,2 @@
--- Retrieves all columns in table containg metadata of first_table
-SHOW COLUMNS FROM first_table;
+-- Prints the process of first_tale being created
+SHOW CREATE TABLE first_table;
