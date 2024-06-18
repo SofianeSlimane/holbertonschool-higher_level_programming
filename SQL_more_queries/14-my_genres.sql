@@ -2,3 +2,4 @@
 SELECT name
 FROM tv_genres, tv_show_genres
 WHERE tv_show_genres.show_id = 8 AND tv_show_genres.genre_id = tv_genres.id
+ORDER BY name ASC;
