@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module connects to MySQL database and lists all
-all rows from a table"""
+specific rows from a table"""
 if __name__ == "__main__":
     import MySQLdb
     import sys
