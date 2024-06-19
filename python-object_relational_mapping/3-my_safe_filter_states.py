@@ -4,8 +4,8 @@ specific rows from a table, safe from SQL injection"""
 if __name__ == "__main__":
     import MySQLdb
     import sys
-    if len(sys.argv) > 5:
-        exit
+    if len(sys.argv) > 5 or ";" in sys.argv[4]:
+        raise ValueError
     else:
         my_sql_username = sys.argv[1]
         mysql_password = sys.argv[2]
@@ -21,6 +21,7 @@ if __name__ == "__main__":
     rows = cur.fetchall()
     for row in rows:
         print(row)
-
+    # print(sys.argv)
+    # print(len(sys.argv))
     cur.close()
     db.close()
