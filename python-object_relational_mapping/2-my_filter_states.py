@@ -14,7 +14,7 @@ if __name__ == "__main__":
                          passwd=mysql_password, db=database_name,
                          port=3306)
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states WHERE states.name = '{}' ORDER
+    cur.execute("""SELECT * FROM states WHERE name = '{}' ORDER
                 BY states.id ASC""".format(state_name_searched))
     rows = cur.fetchall()
     for row in rows:
