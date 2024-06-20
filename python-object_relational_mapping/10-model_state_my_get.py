@@ -10,9 +10,9 @@ if __name__ == '__main__':
     from model_state import Base, State
     from sqlalchemy.orm import sessionmaker
 
-    if len(sys.argv) > 5 or ";" in sys.argv[4]:
-        raise ValueError
-    else:
+    for arguments in sys.argv:
+        if ";" in arguments:
+            raise ValueError
         my_sql_username = sys.argv[1]
         mysql_password = sys.argv[2]
         database_name = sys.argv[3]
