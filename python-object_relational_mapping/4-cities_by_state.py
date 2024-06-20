@@ -15,8 +15,9 @@ if __name__ == "__main__":
                          passwd=mysql_password, db=database_name,
                          port=3306)
     cur = db.cursor()
-    cur.execute("""SELECT id, name FROM cities
-                ORDER BY cities.id ASC""")
+    cur.execute("""SELECT cities.id, cities.name, states.name FROM cities,
+                 states WHERE states.id = cities.state_id
+                 ORDER BY cities.id ASC""")
     rows = cur.fetchall()
     for row in rows:
         print(row)
