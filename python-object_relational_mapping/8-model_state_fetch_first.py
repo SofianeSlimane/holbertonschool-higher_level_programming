@@ -21,6 +21,6 @@ if __name__ == '__main__':
     session_object = Session()
     first_row = session_object.query(State).first()
     if first_row is None:
-        print()
+        print("Nothing")
     else:
         print(f"{first_row.id}: {first_row.name}")
