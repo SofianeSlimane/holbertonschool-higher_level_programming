@@ -23,4 +23,4 @@ if __name__ == '__main__':
     joined_rows = session_object.query(
         City, State).join(State).order_by(City.id.asc())
     for instance, instance2 in joined_rows:
-        print(f"{instance2.name}:  ({instance.id}) {instance.name}")
+        print(f"{instance2.name}: ({instance.id}) {instance.name}")
