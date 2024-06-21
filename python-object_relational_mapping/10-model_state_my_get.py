@@ -25,9 +25,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session_object = Session()
     state_row = session_object.query(State).filter(
-        State.name == state_name_to_search)
+        State.name == state_name_to_search).first()
     if state_row is None:
-        print("Not found")
+        print("Not Found")
     else:
-        for instance in state_row:
-            print(instance.id)
+        print(state_row.id)
