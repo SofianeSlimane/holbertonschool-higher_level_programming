@@ -27,6 +27,6 @@ if __name__ == '__main__':
     state_row = session_object.query(State).filter(
         State.name == state_name_to_search).first()
     if state_row is None:
-        print("Not Found")
+        print("Not found")
     else:
         print(state_row.id)
