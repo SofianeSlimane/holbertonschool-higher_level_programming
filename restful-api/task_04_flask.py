@@ -32,8 +32,10 @@ def get_user(username):
         username: retrieves the dynamic variable
         <username> and use it as a parameter.
     """
-    users_data = users.get(username)
-    return jsonify(users_data)
+    user_data = users.get(username)
+    if user_data is None:
+        return {"error": "User not found"}
+    return jsonify(user_data)
 
 
 @app.route("/add_user", methods=['POST'])
