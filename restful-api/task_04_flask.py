@@ -45,6 +45,8 @@ def add_user():
     """
     my_json_dict = request.get_json()
     username = my_json_dict.get("username")
+    if username is None:
+        return {"error": "User not found"}
     # print(data)
     # print(type(data))
     users[username] = my_json_dict
