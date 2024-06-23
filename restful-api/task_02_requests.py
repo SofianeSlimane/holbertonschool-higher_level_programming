@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""Testing checker"""
 import requests
 import csv
 
 
 def fetch_and_print_posts():
-    """Testing checker"""
     response_obj = requests.get("https://jsonplaceholder.typicode.com/posts")
     print("Status code: {}".format(response_obj.status_code))
     if response_obj.status_code == 200:
@@ -15,7 +13,6 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
-    """Testing checker"""
     my_response = requests.get("https://jsonplaceholder.typicode.com/posts")
     my_json = my_response.json()
     if my_response.status_code == 200:
