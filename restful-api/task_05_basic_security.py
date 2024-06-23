@@ -9,7 +9,7 @@ from flask_jwt_extended import create_access_token, get_jwt_identity
 from flask_jwt_extended import jwt_required, JWTManager
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config["JWT_SECRET_KEY"] = "my secret"
+app.config["JWT_SECRET_KEY"] = "zfozaf@@@jdiaj2424242''"
 jwt = JWTManager(app)
 
 users = {
@@ -62,6 +62,8 @@ def protected():
     """JWT protected route, can oly be accessed if
     user logged in previously and was given a JWT."""
     current_user = get_jwt_identity()
+    if current_user is None:
+        return jsonify("Unauthorized"), 401
     return jsonify("JWT Auth: Access Granted")
 
 
@@ -73,7 +75,7 @@ def admin_only():
     if user_identity in users and users.get(user_identity)['role'] == "admin":
         return jsonify("Admin Access: Granted")
     else:
-        return jsonify("Forbidden"), 401
+        return jsonify("Forbidden"), 403
 
 # Custom error handlers
 
