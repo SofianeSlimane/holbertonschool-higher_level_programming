@@ -36,7 +36,7 @@ def generate_invitations(template, attendees):
             if value is None:
                 try:
                     new_str = new_str.replace('{{{}}}'.format(key),
-                                              f"{key}:N/A", 1)
+                                              "N/A", 1)
                 except ValueError:
                     raise ValueError
                 except TypeError:
