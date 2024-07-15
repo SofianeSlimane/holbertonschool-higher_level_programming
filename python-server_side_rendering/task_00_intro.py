@@ -13,6 +13,9 @@ def generate_invitations(template, attendees):
             where each value replaces its respective value
             in template.
             """
+    if len(template) == 0:
+        print("Template is empty, no output files generated.")
+        exit()
 
     for items in attendees:
         if type(items) is not dict:
