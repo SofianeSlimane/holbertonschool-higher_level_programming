@@ -20,6 +20,11 @@ def generate_invitations(template, attendees):
         print("No data provided, no output files generated.")
         exit()
 
+    for items in attendees:
+        if type(items) is not dict:
+            print(f"{type(items)}")
+            exit()
+
     index = 1
 
     for people in attendees:
