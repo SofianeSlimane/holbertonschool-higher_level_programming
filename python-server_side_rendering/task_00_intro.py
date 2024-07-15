@@ -35,13 +35,22 @@ def generate_invitations(template, attendees):
         new_str = template
         for key, value in people.items():
             if value is None:
+
                 new_str = new_str.replace('{{{}}}'.format(key), f"{key}:N/A")
             else:
                 try:
                     new_str = new_str.replace('{{{}}}'.format(key), value)
                 except ValueError:
-                    raise ValueError
+                    return
+
         if not os.path.exists("output_{}.txt".format(index)):
             with open('output_{}.txt'.format(index), 'w') as file:
-                file.write(new_str)
+                try:
+                    file.write(new_str)
+                except FileNotFoundError:
+                    return
+                except EOFError:
+                    return
+                except ImportError:
+                    return
         index += 1
