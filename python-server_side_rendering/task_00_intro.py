@@ -13,7 +13,9 @@ def generate_invitations(template, attendees):
             where each value replaces its respective value
             in template.
             """
-    if len(template) == 0:
+    if type(template) is not str:
+        print(f"{type(template)} is invalid")
+    elif len(template) == 0:
         print("Template is empty, no output files generated.")
         exit()
     elif len(attendees) == 0:
