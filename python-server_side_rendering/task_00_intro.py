@@ -34,12 +34,6 @@ def generate_invitations(template, attendees):
                     raise ValueError
 
         with open('output_{}.txt'.format(index), 'w') as file:
-            try:
-                file.write(new_str)
-            except FileNotFoundError:
-                raise FileNotFoundError
-            except EOFError:
-                return
-            except ImportError:
-                return
+            file.write(new_str)
+
         index += 1
