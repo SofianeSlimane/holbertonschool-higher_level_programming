@@ -37,8 +37,11 @@ def generate_invitations(template, attendees):
         new_str = template
         for key, value in people.items():
             if value is None:
-                new_str = new_str.replace('{{{}}}'.format(key), f"{key}:N/A",
-                                          1)
+                try:
+                    new_str = new_str.replace('{{{}}}'.format(key),
+                                              f"{key}:N/A", 1)
+                except ValueError:
+                    raise ValueError
             else:
                 try:
                     new_str = new_str.replace('{{{}}}'.format(key), value,
