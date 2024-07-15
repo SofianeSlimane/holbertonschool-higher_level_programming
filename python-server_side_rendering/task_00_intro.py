@@ -22,9 +22,6 @@ def generate_invitations(template, attendees):
     elif template is "":
         raise ValueError("Template is empty, no output files generated.")
 
-    elif len(attendees) == 0:
-        raise ValueError("No data provided, no output files generated.")
-
     for items in attendees:
         if type(items) is not dict:
             raise TypeError(f"{type(items)} is invalid")
