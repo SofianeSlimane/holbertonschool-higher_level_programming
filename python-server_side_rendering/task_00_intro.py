@@ -30,19 +30,19 @@ def generate_invitations(template, attendees):
             raise TypeError("attendees must be a list of dictionnaries")
 
     index = 1
-    new_str = template
+
 
     for people in attendees:
+        new_str = template
         for key, value in people.items():
-            if value is None or '{{{}}}'.format(key) not in attendees:
+            if value is None:
                 new_str = new_str.replace('{{{}}}'.format(key), "N/A")
             else:
                 try:
                     new_str = new_str.replace('{{{}}}'.format(key), value)
                 except ValueError:
                     raise ValueError
-    for people in attendees:
         if not os.path.exists("output_{}.txt".format(index)):
             with open('output_{}.txt'.format(index), 'w') as file:
                 file.write(new_str)
-                index += 1
+        index += 1
