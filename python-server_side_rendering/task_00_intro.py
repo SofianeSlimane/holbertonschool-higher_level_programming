@@ -19,17 +19,17 @@ def generate_invitations(template, attendees):
     elif type(attendees) is not list:
         print(f"{type(attendees)} is invalid")
         exit()
+    elif type(attendees) is list:
+        for items in attendees:
+            if type(items) is not dict:
+                print(f"{type(items)}")
+                exit()
     elif len(template) == 0:
         print("Template is empty, no output files generated.")
         exit()
     elif len(attendees) == 0:
         print("No data provided, no output files generated.")
         exit()
-
-    for items in attendees:
-        if type(items) is not dict:
-            print(f"{type(items)}")
-            exit()
 
     index = 1
 
