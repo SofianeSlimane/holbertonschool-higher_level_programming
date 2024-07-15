@@ -15,6 +15,7 @@ def generate_invitations(template, attendees):
             """
     if type(template) is not str:
         print(f"{type(template)} is invalid")
+        exit()
     elif len(template) == 0:
         print("Template is empty, no output files generated.")
         exit()
