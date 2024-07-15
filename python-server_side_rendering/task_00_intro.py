@@ -27,7 +27,7 @@ def generate_invitations(template, attendees):
 
     for items in attendees:
         if type(items) is not dict:
-            raise TypeError("attendees must be a list of dictionnaries")
+            raise TypeError(f"{type(items)} is invalid")
 
     index = 1
 
