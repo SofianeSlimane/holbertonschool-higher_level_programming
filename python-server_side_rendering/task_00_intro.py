@@ -51,7 +51,7 @@ def generate_invitations(template, attendees):
                     raise TypeError
         if not os.path.exists("output_{}.txt"):
             try:
-                with open('output_{}.txt'.format(index), 'w') as file:
+                with open('output_{}.txt'.format(index), 'w', encoding="utf-8") as file:
                     file.write(new_str)
             except FileNotFoundError:
                 raise FileNotFoundError
