@@ -38,7 +38,6 @@ def generate_invitations(template, attendees):
                     new_str = new_str.replace('{{{}}}'.format(key), value)
                 except ValueError:
                     raise ValueError
-    print(new_str)
     for people in attendees:
         if os.path.exists("output_{}.txt".format(index)):
             pass
