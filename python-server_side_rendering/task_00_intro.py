@@ -24,8 +24,8 @@ def generate_invitations(template, attendees):
         exit()
 
     for items in attendees:
-        if type(attendees) is not list and attendees[0] is not dict:
-            print(f"{type(attendees)} is invalid")
+        if type(items) is not dict:
+            print(f"{type(items)}")
             exit()
 
     index = 1
@@ -39,12 +39,16 @@ def generate_invitations(template, attendees):
                                               f"{key}:N/A", 1)
                 except ValueError:
                     raise ValueError
+                except TypeError:
+                    raise TypeError
             else:
                 try:
                     new_str = new_str.replace('{{{}}}'.format(key), value,
                                               1)
                 except ValueError:
                     raise ValueError
+                except TypeError:
+                    raise TypeError
         if not os.path.exists("output_{}.txt"):
             try:
                 with open('output_{}.txt'.format(index), 'w') as file:
