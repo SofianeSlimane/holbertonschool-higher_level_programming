@@ -24,11 +24,8 @@ def generate_invitations(template, attendees):
         exit()
 
     for items in attendees:
-        if type(attendees) is not list:
+        if type(attendees) is not list and attendees[0] is not dict:
             print(f"{type(attendees)} is invalid")
-            exit()
-        elif type(items) is not dict:
-            print(f"{type(items)}")
             exit()
 
     index = 1
