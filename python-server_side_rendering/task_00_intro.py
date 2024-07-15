@@ -16,10 +16,14 @@ def generate_invitations(template, attendees):
     if len(template) == 0:
         print("Template is empty, no output files generated.")
         exit()
+    elif len(attendees) == 0:
+        print("No data provided, no output files generated.")
+        exit()
 
     for items in attendees:
         if type(items) is not dict:
-            raise TypeError(f"{type(items)} is invalid")
+            print(f"{type(items)} is invalid")
+            exit()
 
     index = 1
 
