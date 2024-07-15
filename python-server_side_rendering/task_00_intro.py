@@ -13,11 +13,6 @@ def generate_invitations(template, attendees):
             where each value replaces its respective value
             in template.
             """
-    if type(template) is not str:
-        raise TypeError(f"{type(template)} is invalid")
-
-    elif type(attendees) is not list:
-        raise TypeError(f"{type(attendees)} is invalid")
 
     for items in attendees:
         if type(items) is not dict:
