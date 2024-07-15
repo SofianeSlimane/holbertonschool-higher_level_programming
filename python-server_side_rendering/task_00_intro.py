@@ -19,7 +19,7 @@ def generate_invitations(template, attendees):
     elif type(attendees) is not list:
         raise TypeError(f"{type(attendees)} is invalid")
 
-    elif len(template) == 0:
+    elif template is "":
         raise ValueError("Template is empty, no output files generated.")
 
     elif len(attendees) == 0:
@@ -34,8 +34,7 @@ def generate_invitations(template, attendees):
     for people in attendees:
         new_str = template
         for key, value in people.items():
-            if value is None:
-
+            if value is None or value is "":
                 new_str = new_str.replace('{{{}}}'.format(key), f"{key}:N/A",
                                           1)
             else:
