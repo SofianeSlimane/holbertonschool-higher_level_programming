@@ -19,7 +19,6 @@ with open("products.csv", 'r') as myFile:
     for row in csvReader:
         print(type(row))
         print(row)
-
 print("data from json file")
 print("----------------------------------")
 with open("products.json", 'r') as myfile:
@@ -28,5 +27,5 @@ with open("products.json", 'r') as myfile:
     for products in my_obj:
         print(products)
     
-print("accessible", my_obj)
-print("Acessible too", csvReader)
+#print("accessible", my_obj)
+#print("Acessible too", csvReader)

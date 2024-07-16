@@ -54,16 +54,15 @@ def data():
     elif src == 'csv':
         with open('products.csv', 'r') as myFile:
             csvReader = csv.DictReader(myFile)
-        if _id is not None:
-            for row in csvReader:
-                if row.get('id') == _id:
-                    my_row = row
-                    del my_row['id']
-                    return render_template('product_display.html', my_dict=my_row)
-        else:
-            for row in csvReader:
-                del row['id']
-        return render_template('product_display.html', my_dict=csvReader)
+            if _id is not None:
+                for row in csvReader:
+                    if row.get('id') == _id:
+                        my_row = row
+                        del my_row['id']
+                        return render_template('product_display.html', my_dict=my_row)
+            else:
+                    
+                return render_template('product_display.html', my_dict=csvReader)
     
     else:
         return render_template('product_display.html', error_message="Wrong source")
