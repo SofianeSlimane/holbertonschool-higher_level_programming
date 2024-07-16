@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Items List</title>
+</head>
+
+<body>
+
+    <ul>
+        {% for key, value in my_list.items() %}
+        {% if value | length == 0%}
+        <p>No items found</p>
+        {% else %}
+        {% for items in value %}
+        <li> {{ items }} </li>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
