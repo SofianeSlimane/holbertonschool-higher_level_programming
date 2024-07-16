@@ -6,6 +6,9 @@
 </head>
 
 <body>
+    {% if error_message %}
+    <p>Wrong source</p>
+    {% else %}
     <table>
         <thead>
             <tr>
@@ -25,7 +28,7 @@
         </tbody>
     </table>
 
-
+    {% endif %}
 </body>
 
 </html>
