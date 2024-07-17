@@ -59,6 +59,8 @@ def data():
             my_list = []
             for row in csvReader:
                 my_list.append(row)
+            for element in my_list:
+                element.pop('id')
                     
             return render_template('product_display.html', my_dict=my_list)
     
