@@ -36,33 +36,31 @@ def items():
 def data():
     """Contact page"""
     src = request.args.get('source')
-    _id = request.args.get('id')
+    _id = str(request.args.get('id'))
     if src == 'json':
         with open('products.json', 'r') as myFile:
             json_data = json.load(myFile)
-        if _id is not None:
-            for dictionary in json_data:
-                if dictionary.get('id') == _id:
-                    my_dict = dictionary
-                    del my_dict['id']
-                    return render_template('product_display.html', my_dict=my_dict)
-        else:
-            for product in json_data:
-                del product['id']
-            return render_template('product_display.html', my_dict=json_data)
-    
+            if _id is not None:
+                for dictionary in json_data:
+                    if str(dictionary.get('id')) != _id:
+                        json_data.remove(dictionary)
+                    else:
+                        dictionary.pop('id')
+                        
+                return render_template('product_display.html', my_dict=json_data)
+            else:
+                for product in json_data:
+                    del product['id']
+                return render_template('product_display.html', my_dict=json_data)
+        
     elif src == 'csv':
         with open('products.csv', 'r') as myFile:
             csvReader = csv.DictReader(myFile)
-            if _id is not None:
-                for row in csvReader:
-                    if row.get('id') == _id:
-                        my_row = row
-                        del my_row['id']
-                        return render_template('product_display.html', my_dict=my_row)
-            else:
+            my_list = []
+            for row in csvReader:
+                my_list.append(row)
                     
-                return render_template('product_display.html', my_dict=csvReader)
+            return render_template('product_display.html', my_dict=my_list)
     
     else:
         return render_template('product_display.html', error_message="Wrong source")
