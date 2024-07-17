@@ -8,6 +8,8 @@
 <body>
     {% if error_message %}
     <p>Wrong source</p>
+    {% elif product_not_found %}
+    <p>{{ product_not_found }}</p>
     {% else %}
     <table>
         <thead>
