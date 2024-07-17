@@ -36,13 +36,13 @@ def items():
 def data():
     """Contact page"""
     src = request.args.get('source')
-    _id = str(request.args.get('id'))
+    _id = request.args.get('id')
     if src == 'json':
         with open('products.json', 'r') as myFile:
             json_data = json.load(myFile)
             if _id is not None:
                 for dictionary in json_data:
-                    if str(dictionary.get('id')) != _id:
+                    if str(dictionary.get('id')) != str(_id):
                         json_data.remove(dictionary)
                     else:
                         dictionary.pop('id')
@@ -59,10 +59,18 @@ def data():
             my_list = []
             for row in csvReader:
                 my_list.append(row)
-            for element in my_list:
-                element.pop('id')
-                    
-            return render_template('product_display.html', my_dict=my_list)
+            if _id is not None:
+                for dico in my_list:
+                    if str(dico.get('id')) != _id:
+                        my_list.remove(dico)
+                for dino in my_list:
+                    dino.pop('id')
+                return render_template('product_display.html', my_dict=my_list)
+            else:
+                for element in my_list:
+                    element.pop('id')
+                        
+                return render_template('product_display.html', my_dict=my_list)
     
     else:
         return render_template('product_display.html', error_message="Wrong source")
